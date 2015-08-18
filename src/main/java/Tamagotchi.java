@@ -36,9 +36,10 @@ public class Tamagotchi {
   }
 
   public Tamagotchi timePasses() {
-    mFoodLevel -= 1;
-    mSleepLevel -= 1;
-    mActivityLevel -= 1;
+    Random randomGenerator = new Random();
+    mFoodLevel -= randomGenerator.nextInt(mFoodLevel+1);
+    mSleepLevel -= randomGenerator.nextInt(mSleepLevel+1);
+    mActivityLevel -= randomGenerator.nextInt(mActivityLevel+1);
     return this;
   }
 
@@ -64,11 +65,8 @@ public class Tamagotchi {
   }
 
   public Tamagotchi nap() {
-    while (mSleepLevel < 10) {
-      timePasses();
-      mSleepLevel += 2; //Adds 1 to Sleep Level, since time passing
-                        // decreases Sleep Level by one.
-    }
+    timePasses();
+    mSleepLevel = 10;
     return this;
   }
 
