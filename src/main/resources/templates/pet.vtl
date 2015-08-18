@@ -1,28 +1,40 @@
 <h1>$pet.getName()</h1>
 
 #if($pet.isAlive())
-  <p>Food Level: $pet.getFoodLevel()</p>
-  <form action='/pet' method='post'>
-    <input type="hidden" name="feed" id="feed" value="true" class='btn'>
-    <button type="submit" id="feed-button" class='btn'>Feed</button>
-  </form>
+  <div class="row-fluid">
+    <div class="span4 text-left">
+      <p>Food Level: $pet.getFoodLevel()</p>
+      <form action='/pet' method='post'>
+        <input type="hidden" name="feed" id="feed" value="true" class='btn'>
+        <button type="submit" id="feed-button" class='btn btn-info'>Feed</button>
+      </form>
+    </div>
 
-  <p>Sleep Level:$pet.getSleepLevel()</p>
-  <form action='/pet' method='post'>
-    <input type="hidden" name="nap" id="nap" value="true" class='btn'>
-    <button type="submit" id="nap-button" class='btn'>Nap</button>
-  </form>
+    <div class="span4 text-center">
+      <p>Sleep Level:$pet.getSleepLevel()</p>
+      <form action='/pet' method='post'>
+        <input type="hidden" name="nap" id="nap" value="true" class='btn'>
+        <button type="submit" id="nap-button" class='btn btn-info'>Nap</button>
+      </form>
+    </div>
 
-  <p>Activity Level:$pet.getActivityLevel()</p>
-  <form action='/pet' method='post'>
-    <input type="hidden" name="play" id="play" value="true" class='btn'>
-    <button type="submit" id="play-button" class='btn'>Play</button>
-  </form>
+    <div class="span4 text-right">
+      <p>Activity Level:$pet.getActivityLevel()</p>
+      <form action='/pet' method='post'>
+        <input type="hidden" name="play" id="play" value="true" class='btn'>
+        <button type="submit" id="play-button" class='btn btn-info'>Play</button>
+      </form>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="text-center">
+      <form action='/pet' method='post'>
+        <input type="hidden" name="doNothing" id="doNothing" value="true" class='btn'>
+        <button type="submit" id="doNothing-button" class='btn btn-info'>Do Nothing</button>
+      </form>
+    </div>
+  </div>
 
-  <form action='/pet' method='post'>
-    <input type="hidden" name="doNothing" id="doNothing" value="true" class='btn'>
-    <button type="submit" id="doNothing-button" class='btn'>Do Nothing</button>
-  </form>
 #else
   <p>Uh oh! $pet.getName() is dead!</p>
   <a href='/'>Create a new pet!</a>

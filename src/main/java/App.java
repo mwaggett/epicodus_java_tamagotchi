@@ -13,7 +13,7 @@ public class App {
   public static void main(String[] args) {
 
     String layout = "templates/layout.vtl";
-
+    staticFileLocation("/public");
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       request.session().attribute("pet", null);
