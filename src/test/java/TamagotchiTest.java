@@ -14,9 +14,9 @@ public class TamagotchiTest {
   public void tamagotchi_instantiatesCorrectly() {
     Tamagotchi myPet = new Tamagotchi("lil dragon");
     assertEquals("lil dragon", myPet.getName());
-    assertEquals(10, myPet.getFoodLevel());
-    assertEquals(10, myPet.getSleepLevel());
-    assertEquals(10, myPet.getActivityLevel());
+    assertEquals(100, myPet.getFoodLevel());
+    assertEquals(100, myPet.getSleepLevel());
+    assertEquals(100, myPet.getActivityLevel());
   }
 
   @Test
@@ -41,11 +41,11 @@ public class TamagotchiTest {
   }
 
   @Test
-  public void feed_foodLevelIncreasesByOne_6() {
+  public void feed_foodLevelIncreasesByTen_15() {
     Tamagotchi myPet = new Tamagotchi("lil dragon");
     myPet.setFoodLevel(5);
     myPet.feed();
-    assertEquals(6, myPet.getFoodLevel());
+    assertEquals(15, myPet.getFoodLevel());
   }
 
   @Test
@@ -53,7 +53,7 @@ public class TamagotchiTest {
     Tamagotchi myPet = new Tamagotchi("lil dragon");
     myPet.setSleepLevel(5);
     myPet.nap();
-    assertEquals(10, myPet.getSleepLevel());
+    assertEquals(100, myPet.getSleepLevel());
   }
 
   // @Test
@@ -66,15 +66,15 @@ public class TamagotchiTest {
   // Food Level will now be random, so this test would need to be modified.
 
   @Test
-  public void play_ActivityLevelIncreasesByOne_6() {
+  public void play_ActivityLevelIncreasesByTen_15() {
     Tamagotchi myPet = new Tamagotchi("lil dragon");
     myPet.setActivityLevel(5);
     myPet.play();
-    assertEquals(6, myPet.getActivityLevel());
+    assertEquals(15, myPet.getActivityLevel());
   }
 
   @Test
-  public void isHappy_foodAtTen_true() {
+  public void isHappy_allGreaterThanEighty_true() {
     Tamagotchi myPet = new Tamagotchi("lil dragon");
     assertEquals(true, myPet.isHappy());
   }

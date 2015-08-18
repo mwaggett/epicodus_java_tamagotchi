@@ -26,13 +26,13 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Create a Tamagotchi!");
   }
 
-  @Test
-  public void newPage_desiredResult() {
-    goTo("starting_page_url");
-    fill("#input_id").with("input");
-    submit(".btn");
-    assertThat(pageSource()).contains("Some result of input");
-  }
+  // @Test
+  // public void newPage_desiredResult() {
+  //   goTo("starting_page_url");
+  //   fill("#input_id").with("input");
+  //   submit(".btn");
+  //   assertThat(pageSource()).contains("Some result of input");
+  // }
 
 
 }

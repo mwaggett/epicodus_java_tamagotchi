@@ -11,9 +11,9 @@ import java.util.Map;
 public class Tamagotchi {
 
   private String mName;
-  private int mFoodLevel = 10;
-  private int mSleepLevel = 10;
-  private int mActivityLevel = 10;
+  private int mFoodLevel = 100;
+  private int mSleepLevel = 100;
+  private int mActivityLevel = 100;
 
   public Tamagotchi(String name) {
     mName = name;
@@ -37,9 +37,9 @@ public class Tamagotchi {
 
   public Tamagotchi timePasses() {
     Random randomGenerator = new Random();
-    mFoodLevel -= randomGenerator.nextInt(mFoodLevel+1);
-    mSleepLevel -= randomGenerator.nextInt(mSleepLevel+1);
-    mActivityLevel -= randomGenerator.nextInt(mActivityLevel+1);
+    mFoodLevel -= randomGenerator.nextInt(11);
+    mSleepLevel -= randomGenerator.nextInt(11);
+    mActivityLevel -= randomGenerator.nextInt(11);
     return this;
   }
 
@@ -53,8 +53,11 @@ public class Tamagotchi {
   }
 
   public Tamagotchi feed() {
-    if (mFoodLevel < 10) {
-      mFoodLevel += 1;
+    if (mFoodLevel < 90) {
+      mFoodLevel += 10;
+    }
+    else if (mFoodLevel < 100) {
+      mFoodLevel = 100;
     }
     return this;
   }
@@ -66,7 +69,7 @@ public class Tamagotchi {
 
   public Tamagotchi nap() {
     timePasses();
-    mSleepLevel = 10;
+    mSleepLevel = 100;
     return this;
   }
 
@@ -76,14 +79,21 @@ public class Tamagotchi {
   }
 
   public Tamagotchi play() {
-    if (mActivityLevel < 10) {
-      mActivityLevel += 1;
+    if (mActivityLevel < 90) {
+      mActivityLevel += 10;
+      mFoodLevel -= 10;
+      mSleepLevel -= 10;
+    } else if (mActivityLevel < 100) {
+      mActivityLevel = 100;
+      mFoodLevel -= 10;
+      mSleepLevel -= 10;
     }
+
     return this;
   }
 
   public boolean isHappy() {
-    return ((mFoodLevel == 10) && (mSleepLevel == 10) && (mActivityLevel == 10));
+    return ((mFoodLevel >= 80) && (mSleepLevel >= 80) && (mActivityLevel >= 80));
   }
 
 
