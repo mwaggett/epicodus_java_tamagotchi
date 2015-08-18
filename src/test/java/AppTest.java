@@ -15,8 +15,8 @@ public class AppTest extends FluentTest {
       return webDriver;
   }
 
-  @ClassRule
-  public static ServerRule server = new ServerRule();
+  // @ClassRule
+  // public static ServerRule server = new ServerRule();
 
   /*
   ~~UNIT TESTING~~
@@ -42,5 +42,5 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Some result of input");
   }
   */
-  
+
 }
