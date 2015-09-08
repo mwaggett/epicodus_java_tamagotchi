@@ -1,32 +1,36 @@
-# _{Application Name}_
+# Tamagotchi
 
-##### _{Brief description of application}, {Date of current version}_
+##### _Class and POST practice for Epicodus, 18 August 2015_
 
-#### By _**{List of contributors}**_
+#### By **Aimee Reiss & Molly Waggett**
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. Do you want other developers to use this code in their apps? Talk about things like that here in simple terms.}_
+This app allows a user to create a new Tamagotchi pet to interact with. As time passes (i.e. the user 'does nothing'), the pet's activity level, food level, and sleep level drop. To raise these, the user must play with, feed, or give their pet a nap, respectively. If any of the tamagotchi's stats drop to 0, it dies and the user may create a new pet.
 
 ## Setup
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Are there other applications this app depends on?}_
+* Clone this repository.
+* Using the command line, navigate to the top level of the cloned directory.
+* Make sure you have gradle installed. Then run the following command in your terminal:
+```
+  gradle run
+```
+* Go to localhost:4567.
+* Go!
 
 ## Technologies Used
 
-_{Tell me about the languages you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* Java
+* Spark
+* Velocity
+* Gradle
+* JUnit
+* FluentLenium
 
 ### Legal
 
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
-
-Copyright (c) 2015 **_{List of contribtors}_**
+Copyright (c) 2015 **Aimee Reiss & Molly Waggett**
 
 This software is licensed under the MIT license.
 
